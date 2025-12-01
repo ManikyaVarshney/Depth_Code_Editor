@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Depth Code Editor</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">Depth Code Editor</div>
+  <div class="tagline">
+    The Future of Online Coding Begins Here.<br>
+    Write. Run. Build with Practical Knowledge.
+  </div>
+  <div class="auth"><button>Login with Google</button></div>
+</header>
+
+<div class="workspace">
+  <div class="tabs">
+    <button onclick="switchMode('frontend')" class="active">Frontend Editor</button>
+    <button onclick="switchMode('backend')">Backend Editor</button>
+  </div>
+
+  <div class="editor-area">
+    <div class="top-bar">
+      <button onclick="runCode()">▶ Run</button>
+      <button onclick="downloadProject()">⬇ Download Code</button>
+      <button onclick="clearAll()">🗑 Clear</button>
+    </div>
+    <div id="panels" class="panels"></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
