@@ -13,20 +13,7 @@ function loadPanels(mode) {
       <div class='code-box'> <div class='code-title'>JavaScript</div> <textarea id='js-code'></textarea> </div>
       <iframe id='output'></iframe>
     `;
-  } else {
-    document.getElementById('panels').innerHTML = `
-      <select id='backend-lang' style='position:absolute; top:70px; left:260px; padding:10px;'>
-        <option value='c'>C</option>
-        <option value='cpp'>C++</option>
-        <option value='py'>Python</option>
-        <option value='java'>Java</option>
-        <option value='node'>Node.js</option>
-        <option value='sql'>SQL</option>
-      </select>
-      <div class='code-box'> <div class='code-title'>Backend Code</div> <textarea id='backend-code'></textarea> </div>
-      <div class='console-box' id='console-output'>Console Output...</div>
-    `;
-  }
+  } 
 }
 
 loadPanels('frontend');
