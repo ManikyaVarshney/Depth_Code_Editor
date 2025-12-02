@@ -1,38 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Depth Code Editor</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Depth Code Editor</title>
+
+    <!-- CodeMirror CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/codemirror.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/theme/dracula.min.css" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
 </head>
-<body>
 
-<header>
-  <div class="logo">Depth Code Editor</div>
-  <div class="tagline">
-    The Future of Online Coding Begins Here.<br>
-    Write. Run. Build with Practical Knowledge.
-  </div>
-  <div class="auth"><button>Login with Google</button></div>
-</header>
+<body class="theme-light">
 
-<div class="workspace">
-  <div class="tabs">
-    <button onclick="switchMode('frontend')" class="active">Frontend Editor</button>
-   <!-- <button onclick="switchMode('backend')">Backend Editor</button> -->
-  </div>
+    <!-- HEADER -->
+    <header class="editor-header">
+        <div class="header-left">
+            <img src="https://manikyavarshney.github.io/Depth_Code_Editor/image.jpg"
+                alt="Depth Code Editor" class="logo">
 
-  <div class="editor-area">
-    <div class="top-bar">
-      <button onclick="runCode()">▶ Run</button>
-      <button onclick="downloadProject()">⬇ Download Code</button>
-      <button onclick="clearAll()">🗑 Clear</button>
+            <div class="title-block">
+                <h1 class="glow">Depth Code Editor</h1>
+                <p class="tag">The Future of Online Coding Begins Here. Write. Run. Build with Practical Knowledge.</p>
+            </div>
+        </div>
+
+        <div class="editor-actions">
+            <button id="runBtn">▶ Run</button>
+            <button id="downloadBtn">⬇ Download</button>
+
+            <label class="auto-run">
+                <input type="checkbox" id="autoRun" checked /> Auto Run
+            </label>
+
+            <button id="fullscreenBtn">⛶ Fullscreen</button>
+            <button id="themeToggle">🌙</button>
+        </div>
+    </header>
+
+    <!-- MAIN WORKSPACE -->
+    <div id="container">
+
+        <!-- SIDEBAR -->
+        <aside id="sidebar">
+            <h2>Templates</h2>
+            <button onclick="loadTemplate('navbar')">Navbar</button>
+            <button onclick="loadTemplate('login')">Login Page</button>
+            <button onclick="loadTemplate('portfolio')">Portfolio Starter</button>
+        </aside>
+
+        <!-- EDITOR AREA -->
+        <section id="editorArea">
+            <div class="editor-block">
+                <h3>HTML</h3>
+                <textarea id="htmlCode"></textarea>
+            </div>
+
+            <div class="editor-block">
+                <h3>CSS</h3>
+                <textarea id="cssCode"></textarea>
+            </div>
+
+            <div class="editor-block">
+                <h3>JavaScript</h3>
+                <textarea id="jsCode"></textarea>
+            </div>
+        </section>
+
+        <!-- DRAG DIVIDER -->
+        <div id="dragBar"></div>
+
+        <!-- OUTPUT -->
+        <iframe id="output"></iframe>
     </div>
-    <div id="panels" class="panels"></div>
-  </div>
-</div>
 
-<script src="script.js"></script>
+    <!-- FOOTER -->
+    <footer>
+        © 2025 DepthKnowledge.in — All Rights Reserved
+    </footer>
+
+    <!-- JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/mode/xml/xml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/mode/css/css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.12/mode/javascript/javascript.min.js"></script>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
