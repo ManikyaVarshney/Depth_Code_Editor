@@ -95,6 +95,36 @@ body.theme-dark .editor-header {
     background: #0a1a3f;
 }
 
+/* ---------------- DARK MODE ---------------- */
+.dark body {
+    background: #0d1117;
+    color: white;
+}
+
+.dark header,
+.dark footer {
+    background: #000c2b;
+    color: white;
+}
+
+.dark #sidebar {
+    background: #111827;
+}
+
+.dark .editor-block h3 {
+    background: #001a35;
+}
+
+.dark .CodeMirror {
+    background: #0d1117 !important;
+}
+
+/* Glow Effect */
+.glow {
+    text-shadow: 0px 0px 8px #6ab7ff;
+}
+
+
 /* MAIN CONTAINER */
 #container {
     display: flex;
