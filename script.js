@@ -118,3 +118,26 @@ function loadTemplate(type) {
     }
     runCode();
 }
+
+
+// ---------------- THEME TOGGLE ----------------
+const themeBtn = document.getElementById("themeToggle");
+
+// Load saved theme
+if (localStorage.getItem("depth_theme") === "dark") {
+    document.documentElement.classList.add("dark");
+    themeBtn.textContent = "☀";
+}
+
+// Toggle theme
+themeBtn.onclick = () => {
+    document.documentElement.classList.toggle("dark");
+
+    if (document.documentElement.classList.contains("dark")) {
+        localStorage.setItem("depth_theme", "dark");
+        themeBtn.textContent = "☀";
+    } else {
+        localStorage.setItem("depth_theme", "light");
+        themeBtn.textContent = "🌙";
+    }
+};
